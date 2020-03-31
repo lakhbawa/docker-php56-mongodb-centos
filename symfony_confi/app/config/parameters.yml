@@ -1,0 +1,16 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_driver: pdo_mysql
+    database_host: mongo
+    database_port: 27017
+    database_name: eduBold_mgsss
+    database_user: root
+    database_password: null
+    mailer_transport: gmail
+    mailer_host: null
+    mailer_user: harkamalpreetkaur@indivar.com
+    mailer_password: 123
+    locale: en
+    secret: ThisTokenIsNotSoSecretChangeIt
+    edustack_schoolname: ypsptl
+    memcached.servers: [{ host: 127.0.0.1, port: 11211 }, { host: 127.0.0.2, port: 11211 }]
