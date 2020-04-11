@@ -13,7 +13,7 @@ services:
     stdin_open: true
     tty: true
     volumes:
-      - "/Users/bawa/projects/git/docker-centos56:/opt/app/public"
+      - "/Users/bawa/projects/git/docker-centos56/edubold:/opt/app/public/edubold"
       - "./.docker/nginx/conf.d:/etc/nginx/conf.d"
     command: nginx
     networks:
@@ -26,7 +26,7 @@ services:
       - "9000"
       - "9006"
     volumes:
-      - "/Users/bawa/projects/git/docker-centos56:/opt/app/public"
+      - "/Users/bawa/projects/git/docker-centos56/edubold:/opt/app/public/edubold"
     depends_on: 
       - mongo
     stdin_open: true
@@ -45,10 +45,10 @@ services:
     expose:
       - "27017"
     volumes:
-      - ./share:/home
+      #- ./share:/home
       - ./db-data:/data/db
-      - ./mongo-config:/data/configdb
-      - ./mongo-config/tmp:/tmp
+      #- ./mongo-config:/data/configdb
+      #- ./mongo-config/tmp:/tmp
     networks:
       - centos56
 networks:
