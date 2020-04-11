@@ -23,6 +23,7 @@ COPY ./.docker/php-fpm/xdebug.ini /etc/php.d/xdebug.ini
 
 RUN pecl install mongo-1.3.7
 RUN pecl install xdebug-2.5.5
+RUN mkdir -p /var/log/xdebug_profiler_logs
 
 RUN yum clean all
 
