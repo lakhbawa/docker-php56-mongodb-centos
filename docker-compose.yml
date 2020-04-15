@@ -13,8 +13,8 @@ services:
     stdin_open: true
     tty: true
     volumes:
-      - "/Users/bawa/projects/git/docker-centos56/edubold:/opt/app/public/edubold"
-      - "./.docker/nginx/conf.d:/etc/nginx/conf.d"
+      - /Users/bawa/projects/git/docker-centos56/edubold:/opt/app/public/edubold:cached
+      - ./.docker/nginx/conf.d:/etc/nginx/conf.d
     command: nginx
     networks:
       - centos56    
