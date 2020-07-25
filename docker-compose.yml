@@ -46,10 +46,13 @@ services:
       - "27017"
     volumes:
       #- ./share:/home
-      - ./db-data:/data/db
+      # - ./db-data:/data/db
       #- ./mongo-config:/data/configdb
       #- ./mongo-config/tmp:/tmp
+      - mongodata:/data/db
     networks:
       - centos56
 networks:
   centos56:
+volumes:
+  mongodata:
