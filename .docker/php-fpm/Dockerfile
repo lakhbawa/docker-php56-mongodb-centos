@@ -16,10 +16,10 @@ RUN mkdir -p /run/php-fpm && \
 RUN mkdir -p /var/lib/php/session && \
     chown nginx:nginx /var/lib/php/session
 
-COPY ./docker/php-fpm/php-fpm.conf /etc/php-fpm.conf
-COPY ./docker/php-fpm/www.conf /etc/php-fpm.d/www.conf
-COPY ./docker/php-fpm/php.ini /etc/php.ini
-COPY ./docker/php-fpm/xdebug.ini /etc/php.d/xdebug.ini
+COPY ./.docker/php-fpm/php-fpm.conf /etc/php-fpm.conf
+COPY ./.docker/php-fpm/www.conf /etc/php-fpm.d/www.conf
+COPY ./.docker/php-fpm/php.ini /etc/php.ini
+COPY ./.docker/php-fpm/xdebug.ini /etc/php.d/xdebug.ini
 
 RUN pecl install mongodb-1.9.0
 RUN pecl install xdebug-3.0.2
