@@ -1,5 +1,4 @@
-version: '3'
-
+version: "3"
 
 services:
   nginx:
@@ -12,15 +11,15 @@ services:
       - "80"
     stdin_open: true
     tty: true
-    depends_on: 
+    depends_on:
       - php-fpm
       - mongo
     volumes:
-      - /Users/lakhbeersinghbawa/Documents/projects/eduboldv1:/opt/app/public/edubold:cached
+      - /Users/lakhbeersinghbawa/projects/eduboldv1:/opt/app/public/edubold:cached
       - ./.docker/nginx/conf.d:/etc/nginx/conf.d:cached
     command: nginx
     networks:
-      - centos56    
+      - centos56
   php-fpm:
     build:
       context: .
@@ -29,8 +28,8 @@ services:
       - "9000"
       - "9006"
     volumes:
-      - "/Users/lakhbeersinghbawa/Documents/projects/eduboldv1:/opt/app/public/edubold:cached"
-    depends_on: 
+      - "/Users/lakhbeersinghbawa/projects/eduboldv1:/opt/app/public/edubold:cached"
+    depends_on:
       - mongo
     stdin_open: true
     tty: true
@@ -38,13 +37,13 @@ services:
     networks:
       - centos56
   mongo:
-    image: mongo
+    image: mongo:2.6.12
     container_name: mongo56
     restart: unless-stopped
     tty: true
     stdin_open: true
     ports:
-    - "27017:27017"
+      - "27017:27017"
     expose:
       - "27017"
     volumes:
