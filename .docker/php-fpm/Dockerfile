@@ -8,6 +8,7 @@ RUN rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm && \
     yum -y update
  
 RUN yum -y --enablerepo=remi,remi-php56 install php-fpm php-cli php-pear php-pdo php-mysql php-mysqlnd php-pgsql php-sqlite php-mbstring php-mcrypt php-xml php-simplexml php-curl php-devel
+RUN yum -y install java-11-openjdk-devel
 RUN useradd -M -d /opt/app -s /bin/false nginx
 
 RUN mkdir -p /run/php-fpm && \
